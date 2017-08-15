@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Download Time Calculator</title>
+    <style type="text/css">
+    #container, #output{
+      margin: auto;
+      width: 50%;
+      border: 3px solid #FFEB3B;
+      padding: 10px;
+      box-shadow: 1px 2px 12px 3px grey
+    }
+
+    #input{
+      text-align: center;
+    }
+
+    .content{
+        padding: 7px;
+    }
+
+    .text{
+        padding: 4px; 
+    }
+    </style>
+  </head>
+
+  <body>
+    
+    <form method="post">
+      <div id="container">
+        <div id="input">
+          <h2><u>Enter the details</u></h2>
+          <span> (Validates from kb upto tb both in size and speed)</span>
+          <div class="content">
+          <label>File-Size:</label>
+          <input class="text" type="text" name="size" placeholder="eg: 700mb or 1.2gb" style="margin-left: 53px;margin-bottom: 3px"> <br>
+          </div>
+          <div class="content">
+          <label>Download-Speed:</label>
+          <input class="text" type="text" name="speed" placeholder="eg: 120kbps or 2.1mbps"><br>
+          </div>
+          <input type="submit" value="Calculate" style="margin: 11px -16px 5px 0px; padding: 6px"><br>
+          <span style="color: red">{{ error }}</span>
+        </div>
+      </div>
+     <br>
+     <br>
+        <div id="output" style="display: {{ viz }}">
+        <h2>File size  : {{ size }}</h2>
+        <h2>File speed : {{ speed }} </h2>
+          <ul>
+            <li>Years: {{ years }}</li>
+            <li>Months: {{ months }}</li>
+            <li>Weeks: {{ weeks }}</li>
+            <li>Days: {{ days }}</li>
+            <li>Hours: {{ hours }}</li>
+            <li>Minutes: {{ minutes }}</li>
+            <li>Seconds: {{ seconds }}</li>
+          </ul>
+        </div>
+    </form>
+  </body>
+
+</html>
