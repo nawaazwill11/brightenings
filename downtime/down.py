@@ -35,6 +35,7 @@ class Downtime(BaseHandler):
     def get(self):
         time_dict = dict(viz = "none")
         self.render('downtime.html', **time_dict)
+	alpha = 22
 
     def post(self):
         has_error = False
